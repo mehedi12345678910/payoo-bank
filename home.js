@@ -2,6 +2,8 @@
 const validPin=1234;
 const number=37557311;
 
+const transactionData=[]
+
 // functions to get input values   /// ata sobar last  a dhekhano hoice code choto korar jonno 
 function getInputValueNumber(id){
    const inputField= document.getElementById(id)
@@ -69,6 +71,10 @@ const accountNumber=parseInt(document.getElementById('account-number').value)
 
 // const amount=parseInt( document.getElementById('add-amount').value)////ata sobar age beboher korba 
 const amount=getInputValueNumber('add-amount')///ata shudu code choto korar jonno beboher kora hoice last a
+  if(amount<=0){
+    alert('Invalid amount')
+    return;
+  }
 
 // const pinNumber=parseInt(document.getElementById('add-pin').value) 
 const pinNumber=getInputValueNumber('add-pin')
@@ -95,6 +101,13 @@ const totalNewAvailableBalance= amount + availableBalance;
 setInnerText(totalNewAvailableBalance);
 alert('Money added successfully')
 
+// transaction 
+const data={
+    name:"add Money",
+    date:new Date().toLocaleTimeString(),
+}
+transactionData.push(data)
+
 })
 // cashout money feature last  abong cashout a tumi oupor er function lagaw nije
 document.getElementById('withdraw-btn').addEventListener('click',function(e){
@@ -104,7 +117,10 @@ document.getElementById('withdraw-btn').addEventListener('click',function(e){
     
     //  const availableBalance =parseInt(document.getElementById('available-balance').innerText)
      const availableBalance=getInnerText('available-balance')
-
+       if(amount<=0 || amount>availableBalance){
+        alert('Invalid amount')
+        return
+       }
 
 
     //   const agentNumberPin=parseInt(document.getElementById('agent-number-pin').value)
@@ -129,8 +145,36 @@ document.getElementById('withdraw-btn').addEventListener('click',function(e){
     //  document.getElementById('available-balance').innerText=totalNewAvailableBalance;
      setInnerText(totalNewAvailableBalance);
      alert('Cash out successful')
+
+     const data={
+    name:"add Money",
+    date:new Date().toLocaleTimeString(),
+}
+transactionData.push(data)
 })
 
+document.getElementById('transactions-button').addEventListener('click',function(){
+  
+const transactionContainer=document.getElementById('transaction-container')
+ transactionContainer.innerHTML= " " 
+ for(const data of transactionData){
+     const div=document.createElement('div')
+     div.innerHTML=`
+         <div class=" bg-white rounded-xl p-3 flex justify-between items-center  mt-3">
+    <div class="flex items-center">
+      <div class="p-2 rounded-full bg-gray-200"><img class="mx-auto" src="./assets/wallet1.png" alt=""></div>
+       <div class="ml-3">
+        <h1>${data.name}</h1>
+        <p>${data.date}</p>
+       </div>
+    </div>
+     <i class="fa-solid fa-ellipsis-vertical"></i>
+   </div>
+     `
+      transactionContainer.appendChild(div) 
+ }
+  
+})
 
 
 
@@ -159,6 +203,12 @@ document.getElementById('add-button').addEventListener('click',function(){
     //  document.getElementById('add-button').classList.add('border-[#0874f2]','bg-[#0874f20d]')
     /// tar che short code
     handleButtonToggle('add-button')
+    // transaction 
+const data={
+    name:"add Money",
+    date:new Date().toLocaleTimeString(),
+}
+transactionData.push(data)
 })
 
 document.getElementById('cash-out-button').addEventListener('click',function(){
@@ -175,6 +225,12 @@ document.getElementById('cash-out-button').addEventListener('click',function(){
      handleToggle('cash-out-parent')
 
      handleButtonToggle('cash-out-button')
+     // transaction 
+const data={
+    name:"cash out Money",
+    date:new Date().toLocaleTimeString(),
+}
+transactionData.push(data)
 })
 
 document.getElementById('transfer-button').addEventListener('click',function(){
@@ -191,6 +247,12 @@ document.getElementById('transfer-button').addEventListener('click',function(){
      handleToggle('transfer-money-parent')
     
        handleButtonToggle('transfer-button')
+       // transaction 
+const data={
+    name:"transfer Money",
+    date:new Date().toLocaleTimeString(),
+}
+transactionData.push(data)
 })
 
 document.getElementById('bonus-button').addEventListener('click',function(){
@@ -203,4 +265,32 @@ document.getElementById('bonus-button').addEventListener('click',function(){
      handleToggle('get-bonus-parent')
      
      handleButtonToggle('bonus-button')
+     // transaction 
+const data={
+    name:"get Bonus",
+    date:new Date().toLocaleTimeString(),
+}
+transactionData.push(data)
+})
+document.getElementById('bill-button').addEventListener('click',function(){
+   
+    /////easy way
+     handleToggle('pay-bill-parent')
+     
+     handleButtonToggle('bill-button')
+     // transaction 
+const data={
+    name:"add Bill",
+    date:new Date().toLocaleTimeString(),
+}
+transactionData.push(data)
+})
+
+document.getElementById('transactions-button').addEventListener('click',function(){
+   
+    /////easy way
+     handleToggle('transaction-parent')
+     
+     handleButtonToggle('transactions-button')
+
 })
