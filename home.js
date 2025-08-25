@@ -153,6 +153,54 @@ document.getElementById('withdraw-btn').addEventListener('click',function(e){
 transactionData.push(data)
 })
 
+
+
+
+// transfer Money
+    document.getElementById('transfer-btn').addEventListener('click',function(e){
+        e.preventDefault()
+     const amount = getInputValueNumber('transfer-amount')
+     const availableBalance =getInnerText('available-balance')
+     if(amount<=0 || amount>availableBalance){
+        alert('Invalid Amount')
+        return;
+     }
+     const transferPin=getInputValueNumber('transfer-number-pin')
+     const transferNumber=getInputValueNumber('user-number')
+     if(transferNumber !==number){
+      alert('please Provide valid user number')
+      return;
+     }
+     if(transferPin !==validPin){
+        alert('please provide valid pin')
+         return;
+     }
+     totalNewAvailableBalance=availableBalance - amount;
+     setInnerText(totalNewAvailableBalance)
+     alert('successful transfer')
+    })
+
+
+
+
+/////
+//get bonus 
+document.getElementById('bonus-btn').addEventListener('click',function(e){
+    e.preventDefault();
+    const availableBalance=getInnerText('available-balance')
+    const couponNumber=getInputValueNumber('coupon-number');
+    if(validPin !== couponNumber){
+        alert('please provide valid coupon number')
+        return;
+    }
+    totalNewAvailableBalance = availableBalance + 150;
+    setInnerText(totalNewAvailableBalance)
+    alert('successful ')
+})
+
+
+
+
 document.getElementById('transactions-button').addEventListener('click',function(){
   
 const transactionContainer=document.getElementById('transaction-container')
