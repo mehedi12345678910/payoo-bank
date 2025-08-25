@@ -251,12 +251,7 @@ document.getElementById('add-button').addEventListener('click',function(){
     //  document.getElementById('add-button').classList.add('border-[#0874f2]','bg-[#0874f20d]')
     /// tar che short code
     handleButtonToggle('add-button')
-    // transaction 
-const data={
-    name:"add Money",
-    date:new Date().toLocaleTimeString(),
-}
-transactionData.push(data)
+
 })
 
 document.getElementById('cash-out-button').addEventListener('click',function(){
@@ -273,12 +268,7 @@ document.getElementById('cash-out-button').addEventListener('click',function(){
      handleToggle('cash-out-parent')
 
      handleButtonToggle('cash-out-button')
-     // transaction 
-const data={
-    name:"cash out Money",
-    date:new Date().toLocaleTimeString(),
-}
-transactionData.push(data)
+
 })
 
 document.getElementById('transfer-button').addEventListener('click',function(){
@@ -295,12 +285,7 @@ document.getElementById('transfer-button').addEventListener('click',function(){
      handleToggle('transfer-money-parent')
     
        handleButtonToggle('transfer-button')
-       // transaction 
-const data={
-    name:"transfer Money",
-    date:new Date().toLocaleTimeString(),
-}
-transactionData.push(data)
+
 })
 
 document.getElementById('bonus-button').addEventListener('click',function(){
@@ -313,12 +298,7 @@ document.getElementById('bonus-button').addEventListener('click',function(){
      handleToggle('get-bonus-parent')
      
      handleButtonToggle('bonus-button')
-     // transaction 
-const data={
-    name:"get Bonus",
-    date:new Date().toLocaleTimeString(),
-}
-transactionData.push(data)
+
 })
 document.getElementById('bill-button').addEventListener('click',function(){
    
@@ -326,12 +306,7 @@ document.getElementById('bill-button').addEventListener('click',function(){
      handleToggle('pay-bill-parent')
      
      handleButtonToggle('bill-button')
-     // transaction 
-const data={
-    name:"add Bill",
-    date:new Date().toLocaleTimeString(),
-}
-transactionData.push(data)
+
 })
 
 document.getElementById('transactions-button').addEventListener('click',function(){

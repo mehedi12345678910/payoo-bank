@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <!-- Font Awesome CDN -->
-    <link
+        <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
     />
@@ -16,10 +15,10 @@
       type="text/css"
     />
     <!-- tailwind cdn -->
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-  </head>
-  <body class="bg-[#f4f5f7] h-[100vh]">
-    <div class="max-w-lg mx-auto bg-white rounded-b-2xl">
+         <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body class="bg-[#9e9e9e99]">
+        <div class="max-w-lg mx-auto bg-white rounded-b-2xl">
       <div
         class="min-h-[50px] flex justify-between items-center border-b-1 border-gray-400 p-3"
       >
@@ -27,7 +26,7 @@
           <img class="h-[50px]" src="./assets/Group.png" alt="" />
           <div class="ml-3">
             <h2 class="font-bold">
-              $ <span id="available-balance">45000</span>
+              $ <span id="available-balance">00</span>
             </h2>
             <p class="text-gray-500">Account Balance</p>
           </div>
@@ -79,8 +78,9 @@
       </div>
     </div>
 
-    <div class="all-form-section max-w-lg mx-auto p-3 bg-[#f4f5f7]">
-      <!-- add money -->
+
+     <div class="all-form-section max-w-lg mx-auto p-3 bg-[#f4f5f7] rounded-2xl mt-4">
+       <!-- add money --> 
       <div class="form" id="add-money-parent">
         <h1 class="my-5 font-bold">Add money</h1>
         <form class="bg-white rounded-2xl p-8">
@@ -132,8 +132,11 @@
           </button>
         </form>
       </div>
-      <!-- cash out  -->
-      <div class="form" id="cash-out-parent" style="display: none;">
+<!-- add money end -->
+
+      
+<!-- cash out  -->
+  <div class="form" id="cash-out-parent"  style="display: none;">
      <h1 class="font-semibold">Cash out</h1>
       <form class="bg-white rounded-2xl p-8">
         
@@ -173,8 +176,10 @@
           </button>
         </form>
       </div>
-      <!-- transfer money  -->
-      <div class="form" id="transfer-money-parent" style="display: none;">
+<!-- cash out end -->
+
+ <!-- transfer Money -->
+  <div class="form" id="transfer-money-parent" style="display: none;">
         <h1 class="my-5 font-bold"> Transfer Money</h1>
         <form class="bg-white rounded-2xl p-8">
         
@@ -214,8 +219,10 @@
           </button>
         </form>
       </div>
-      <!-- get bonus -->
-      <div class="form" id="get-bonus-parent" style="display: none;">
+ <!-- transfer Money end -->
+
+<!-- get bonus  -->
+     <div class="form" id="get-bonus-parent" style="display: none;">
       <h1 class="my-5 font-bold">Get Bonus</h1>
       <form class="bg-white rounded-2xl p-8">
         
@@ -224,7 +231,7 @@
             ><br />
             <input
               id="coupon-number"
-              type="text"
+              type="text" 
               placeholder="Enter Your  coupon"
               class="input bg-[#f4f5f7] mt-3 rounded-3xl w-full"
             />
@@ -237,12 +244,11 @@
           Send Now
           </button>
         </form>
-      </div>
-      <!-- pay bill -->
-      <div class="form" id="pay-bill-parent" style="display: none;">
-      <h1 class="my-5 font-bold">pay bill</h1>
-      </div>
-    <!--Transactions -->
+    </div>
+
+<!-- get bonus end -->
+
+  <!--Transactions -->
     <div class="form" id="transaction-parent" style="display: none;">
      <div class="flex justify-between items-center">
          <h1 class="my-5 font-bold">Transaction</h1>
@@ -254,11 +260,11 @@
     </div>
 
     </div>
-    </div>
+  <!--Transactions end -->
+  
+     </div>
 
 
-
-
-    <script src="./home.js"></script>
-  </body>
+     <script src="./fake.js"></script>
+</body>
 </html>
