@@ -241,6 +241,54 @@
       <!-- pay bill -->
       <div class="form" id="pay-bill-parent" style="display: none;">
       <h1 class="my-5 font-bold">pay bill</h1>
+           <form class="bg-white rounded-2xl p-8">
+          <div class="mb-3">
+            <h1 class="font-semibold">Select a bank</h1>
+            <select
+              id="bank"
+              class="select bg-[#f4f5f7] mt-3 rounded-3xl w-full"
+            >
+              <option disabled selected>select a bank</option>
+              <option>AB bank</option>
+              <option>IFIC bank</option>
+              <option>Dutch bangla bank</option>
+            </select>
+          </div>
+          <div class="">
+            <label for="" class="font-semibold"> Bank Account Number</label
+            ><br />
+            <input
+              id="account-number"
+              type="text"
+              placeholder="Enter Your bank account Number"
+              class="input bg-[#f4f5f7] mt-3 rounded-3xl w-full"
+            />
+          </div>
+          <div class="">
+            <label for="" class="font-semibold">Amount to pay </label><br />
+            <input
+              id="pay-bill"
+              type="text"
+              placeholder="Add Amount to pay"
+              class="input bg-[#f4f5f7] mt-3 rounded-3xl w-full"
+            />
+          </div>
+          <div class="">
+            <label for="" class="font-semibold">Pin Number</label><br />
+            <input
+              id="bill-pin"
+              type="text"
+              placeholder="Enter 4 digit pin number"
+              class="input bg-[#f4f5f7] mt-3 rounded-3xl w-full"
+            />
+          </div>
+          <button
+            id="pay-bill-btn"
+            class="btn btn-primary mt-5 w-full rounded-3xl"
+          >
+            Pay Now
+          </button>
+        </form>
       </div>
     <!--Transactions -->
     <div class="form" id="transaction-parent" style="display: none;">
@@ -254,10 +302,11 @@
     </div>
 
     </div>
+
+
+
+
     </div>
-
-
-
 
     <script src="./home.js"></script>
   </body>
